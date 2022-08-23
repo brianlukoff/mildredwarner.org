@@ -1,0 +1,65 @@
+<html>
+
+
+<!-- Mirrored from cms.mildredwarner.org/documents/methodology_guide/MethodologyGuide_GrossReceipts.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Aug 2022 13:45:12 GMT -->
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Gross Receipts Calculator</title>
+<link rel="stylesheet" type="text/css" href="../../../www.mildredwarner.org/main.html">
+</head>
+
+<body>
+
+<script language="javascript">
+function calculate() {
+	GrossReceipts =
+		(parseInt(document.data.TotalCapacity.value) - parseInt(document.data.VacancyRate.value)) * parseInt(document.data.PriceByType.value) +
+		parseInt(document.data.GovernmentPayments.value) +
+		parseInt(document.data.GovernmentPrograms.value);
+	alert("Gross receipts calculated as $" + GrossReceipts);
+}
+</script>
+
+<h2>Gross Receipts Calculator:</h2>
+<p>Enter the data below, and then click <i>Calculate Gross Receipts</i>.</p>
+<form name="data">
+<table border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td width="50%" align="right" valign="bottom">Total capacity =</td>
+    <td width="50%" valign="bottom"><input type="text" name="TotalCapacity" size="20" value="0"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="right" valign="bottom">Vacancy rate =</td>
+    <td width="50%" valign="bottom"><input type="text" name="VacancyRate" size="20" value="0"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="right" valign="bottom">Price by type of care, age of child, and location 
+    =</td>
+    <td width="50%" valign="bottom">$<input type="text" name="PriceByType" size="20" value="0"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="right" valign="bottom">Government direct payments to providers (such as CACFP, 
+    quality and retention grants) =</td>
+    <td width="50%" valign="bottom">$<input type="text" name="GovernmentPayments" size="20" value="0"></td>
+  </tr>
+  <tr>
+    <td width="50%" align="right" valign="bottom">Government funded programs (which have no parent fees, such 
+    as Head Start and pre- kindergarten) =</td>
+    <td width="50%" valign="bottom">$<input type="text" name="GovernmentPrograms" size="20" value="0"></td>
+  </tr>
+  </table>
+  <p align="center">
+  <input type="button" name="Calculate" value="Calculate Gross Receipts" onclick="calculate()">
+</p>
+</form>
+
+<p align="center">&nbsp;</p>
+
+</body>
+
+
+<!-- Mirrored from cms.mildredwarner.org/documents/methodology_guide/MethodologyGuide_GrossReceipts.htm by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Aug 2022 13:45:12 GMT -->
+</html>
