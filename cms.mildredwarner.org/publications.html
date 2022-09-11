@@ -318,7 +318,7 @@
       <tr class="row2">
         <td>2020</td>
         <td>
-	Homsy, George C. and Mildred E. Warner 2020. &ldquo;Does public ownership of utilities matter for local government water policies?&rdquo; Utilities Policy, forthcoming.<a href="../www.mildredwarner.org/_a%20href%3d.html"/p/306">https://doi.org/10.1016/j.jup.2020.101057</a>"> https://doi.org/10.1016/j.jup.2020.101057</a>&nbsp; PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32351260">32351260</a>
+	Homsy, George C. and Mildred E. Warner 2020. &ldquo;Does public ownership of utilities matter for local government water policies?&rdquo; Utilities Policy, forthcoming.<a href="../www.mildredwarner.org/_a%20href%3d.html"/p/306">https://www.sciencedirect.com/science/article/pii/S0957178720300527</a>"> https://www.sciencedirect.com/science/article/pii/S0957178720300527</a>&nbsp; PMID: <a href="https://www.ncbi.nlm.nih.gov/pubmed/32351260">32351260</a>
 
 	<style type="text/css">
 	</style>
@@ -2271,14 +2271,38 @@ mso-outline-level:2">
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#query').keyup(query);
-    $('#warner').change(query);
-    $('#tag').change(query);
-  });
+    if (location.search.startsWith('?tag=')) {
+      switch (parseInt(location.search.split('=')[1])) {
+        case 26:
+          var tagName = 'Decentralization';
+          break;
+        case 27:
+          var tagName = 'Privatization';
+          break;
+        case 29:
+          var tagName = 'Economic Development';
+          break;
+        case 33:
+          var tagName = 'Child Care';
+          break;
+        case 34:
+          var tagName = 'Free Trade and Governance';
+          break;
+        case 53:
+          var tagName = 'Intermunicipal Cooperation';
+          break;
+      }
 
-  function query() {
-    $('#search_results').load('/publications', $('#search_criteria form').serialize());
-  }
+      if (tagName) {
+        $('#main > h2').text('Publications on ' + tagName);
+        $('#search_results tr').each(function() {
+          if ($(this).find('td:nth-child(4) span:contains(' + tagName + ')').length == 0) {
+            $(this).hide();
+          }
+        });
+      }
+    }
+  });
 </script>
         </div>
       </div>
